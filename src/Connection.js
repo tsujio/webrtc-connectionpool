@@ -91,7 +91,7 @@ Connection.prototype = {
     var self = this;
 
     if (!this._destroyed) {
-      if (!this._finReceived) {
+      if (!this._finReceived && this._conn.open) {
         var packet = Packet.create({FIN: true}, {});
         this._conn.send(packet.toJson());
       }

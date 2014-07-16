@@ -55,7 +55,6 @@ ConnectionFactory.prototype = {
     };
 
     this._peerAgent.onclose = function() {
-      self._connectionPool.clear();
     };
 
     this._peerAgent.onerror = function(error) {
@@ -136,6 +135,7 @@ ConnectionFactory.prototype = {
   },
 
   destroy: function() {
+    this._connectionPool.clear();
     this._peerAgent.destroy();
   },
 
