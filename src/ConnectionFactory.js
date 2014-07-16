@@ -131,6 +131,10 @@ ConnectionFactory.prototype = {
     this._connectionPool.set(connection.getRemotePeerId(), connection);
   },
 
+  removeConnection: function(remotePeerId) {
+    this._connectionPool.remove(remotePeerId);
+  },
+
   destroy: function() {
     this._peerAgent.destroy();
   },
