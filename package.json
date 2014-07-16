@@ -1,0 +1,40 @@
+{
+  "name": "webrtc-connectionpool",
+  "version": "1.0.0",
+  "description": "A library of peerjs implementing connection pool",
+  "main": "src/ConnectionFactory.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "browserify --standalone ConnectionFactory . | uglifyjs > dist/webrtc-connectionpool.js",
+    "test": "jasmine-node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsujio/webrtc-connectionpool.git"
+  },
+  "keywords": [
+    "webrtc"
+  ],
+  "author": "tsujio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsujio/webrtc-connectionpool/issues"
+  },
+  "homepage": "https://github.com/tsujio/webrtc-connectionpool",
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "peerjs": "global:Peer"
+  },
+  "devDependencies": {
+    "browserify": "^4.2.0",
+    "browserify-shim": "^3.6.0",
+    "jasmine-node": "1.14.2",
+    "uglify-js": "^2.4.15"
+  }
+}
